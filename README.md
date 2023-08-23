@@ -1,3 +1,6 @@
 # Outsourced-Biodiversity-Loss
 
-# tba
+
+Global biodiversity loss from outsourced deforestation
+
+
