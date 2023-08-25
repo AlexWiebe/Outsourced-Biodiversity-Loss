@@ -1,7 +1,7 @@
 # Global biodiversity loss from outsourced deforestation
 
 
-<br/>
+
 This repository holds code for the following manuscript under review:
 > Wiebe, R.A.* and Wilcove, D.S. _2022_. Global Biodiversity Loss from Outsourced Deforestation.
 
