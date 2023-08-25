@@ -18,11 +18,51 @@ Here, we provide information to assess and replicate our analysis.
 
 Four main components to this analysis. All scripts noted below can be found in the /scripts/ folder of this repo.
 
-### 1/ Data cleaning
+### 1. Data cleaning
 
 We use a number of scripts to modify datasets before using them in analyses. These scripts pertain to aggregating data for computational efficiency, managing and cleaning range maps, and doing basic alterations of datasets.
 
-[OBL_addPlantationMasks.R]
+addPlantationMasks.R
+calcRangeCentroids.R
+changeResolutionHansenLoss.R
+changeResolutionHansenLoss_keep30m.R
+changeResolutionHoang.R
+classifyForestBirds.R
+classifyForestMammals.R
+classifyForestReptiles.R
+makeHansenBinary.R
+
+### 2. Primary analysis of range loss to species
+
+Second, the core of our analysis is the calculation of range loss to species attributable to individual countries or across all countries. These scripts also include some code for secondary analysis (e.g., some summary statistics).
+
+driver.R
+driver_domestic.R
+
+aohcalculations.R
+functions.R
+
+### 3. Supplementary analyses
+
+We perform additional analyses on these outputs, for example to calculate summary statistics.
+
+additional_analysis.R
+criticallyendangered.R
+
+### 4. Figure creation
+
+fig2.R
+fig3.R
+fig3_part2.R
+fig4.R
+supp_fig_ratio.R
+
+## Additional information
+
+Some scripts have considerable computational requirements (>100 mb RAM, >100 hrs continuous runtime across all species). We ran all code on Princeton University’s High Performance Computing cluster system, with scripts run using ‘slurm’ scripts to set computational parameters for cluster usage. An example slurm script is attached (‘ex_slurm’) in this repository.
+
+Alex Wiebe
+
 
 
 
