@@ -14,11 +14,13 @@ We used several datasets in this analysis. Data on forest cover and forest loss 
 
 Here, we provide information to assess and replicate our analysis.
 
-# Overview
+## Overview
 
 Four main components to this analysis. All scripts noted below can be found in the /scripts/ folder of this repo.
 
-## 1/ Data cleaning. We use a number of scripts to modify datasets before using them in analyses. These scripts pertain to aggregating data for computational efficiency, managing and cleaning range maps, and doing basic alterations of datasets.
+### 1/ Data cleaning
+
+We use a number of scripts to modify datasets before using them in analyses. These scripts pertain to aggregating data for computational efficiency, managing and cleaning range maps, and doing basic alterations of datasets.
 
 [OBL_addPlantationMasks.R]
 
