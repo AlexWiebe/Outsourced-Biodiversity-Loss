@@ -59,7 +59,7 @@ supp_fig_ratio.R<br/>
 
 ## Additional information
 
-Some scripts have considerable computational requirements (>100 mb RAM, >100 hrs continuous runtime across all species). We ran all code on Princeton University’s High Performance Computing cluster system, with scripts run using ‘slurm’ scripts to set computational parameters for cluster usage. An example slurm script is attached (‘ex_slurm’) in this repository.
+Some scripts have considerable computational requirements (>100 mb RAM, >100 hrs total continuous runtime across all species). We ran all code on Princeton University’s High Performance Computing cluster system, with scripts run using ‘slurm’ scripts to set computational parameters for cluster usage. An example slurm script is attached (‘ex_slurm’) in this repository.
 
 Alex Wiebe
 
