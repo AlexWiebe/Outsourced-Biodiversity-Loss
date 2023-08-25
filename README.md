@@ -23,8 +23,11 @@ Four main components to this analysis. All scripts noted below can be found in t
 We use a number of scripts to modify datasets before using them in analyses. These scripts pertain to aggregating data for computational efficiency, managing and cleaning range maps, and doing basic alterations of datasets.
 
 addPlantationMasks.R
+
 calcRangeCentroids.R
+
 changeResolutionHansenLoss.R
+
 changeResolutionHansenLoss_keep30m.R
 changeResolutionHoang.R
 classifyForestBirds.R
