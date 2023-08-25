@@ -26,36 +26,36 @@ addPlantationMasks.R <br/>
 calcRangeCentroids.R<br/>
 changeResolutionHansenLoss.R<br/>
 changeResolutionHansenLoss_keep30m.R<br/>
-changeResolutionHoang.R
-classifyForestBirds.R
-classifyForestMammals.R
-classifyForestReptiles.R
+changeResolutionHoang.R<br/>
+classifyForestBirds.R<br/>
+classifyForestMammals.R<br/>
+classifyForestReptiles.R<br/>
 makeHansenBinary.R
 
 ### 2. Primary analysis of range loss to species
 
 Second, the core of our analysis is the calculation of range loss to species attributable to individual countries or across all countries. These scripts also include some code for secondary analysis (e.g., some summary statistics).
 
-driver.R
+driver.R<br/>
 driver_domestic.R
 
-aohcalculations.R
+aohcalculations.R<br/>
 functions.R
 
 ### 3. Supplementary analyses
 
 We perform additional analyses on these outputs, for example to calculate summary statistics.
 
-additional_analysis.R
+additional_analysis.R<br/>
 criticallyendangered.R
 
 ### 4. Figure creation
 
-fig2.R
-fig3.R
-fig3_part2.R
-fig4.R
-supp_fig_ratio.R
+fig2.R<br/>
+fig3.R<br/>
+fig3_part2.R<br/>
+fig4.R<br/>
+supp_fig_ratio.R<br/>
 
 ## Additional information
 
