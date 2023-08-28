@@ -1,5 +1,5 @@
 
-### OBL_addPlantationMasks.R
+### addPlantationMasks.R
 
 ### Alex Wiebe
 ### Princeton University
