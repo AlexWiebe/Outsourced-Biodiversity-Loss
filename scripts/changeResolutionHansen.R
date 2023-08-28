@@ -1,5 +1,5 @@
 
-### OBL_changeResolutionHansen.R
+### changeResolutionHansen.R
 
 ### Alex Wiebe
 ### Princeton University
