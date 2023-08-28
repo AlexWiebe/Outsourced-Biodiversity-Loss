@@ -1,5 +1,5 @@
 
-### OBL_changeResolutionHansenLoss.R
+### changeResolutionHansenLoss.R
 
 ### Alex Wiebe
 ### Princeton University
