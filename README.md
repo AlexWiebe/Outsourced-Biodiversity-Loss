@@ -16,7 +16,7 @@ Here, we provide information to assess and replicate our analysis.
 
 ## Overview
 
-There are four main components to this analysis. All scripts noted below can be found in the /scripts/ folder of this repository, and are run using R v4.3.
+There are four main components to this analysis. All scripts noted below can be found in the /scripts/ folder of this repository.
 
 ### 1. Data cleaning
 
@@ -57,9 +57,9 @@ fig3_part2.R<br/>
 fig4.R<br/>
 supp_fig_ratio.R<br/>
 
-## A note about computation
+## Computational requirements
 
-Some scripts have considerable computational requirements (>100 mb RAM, >100 hrs total continuous runtime across all species). We ran all code on Princeton University’s High Performance Computing cluster system, with scripts run using ‘slurm’ scripts to set computational parameters for cluster usage. An example slurm script (‘OBL_ex_slurm’) is housed in this repository.
+We ran all code using R version 4.3 on Princeton University’s High Performance Computing cluster system, with scripts run using ‘slurm’ scripts to set computational parameters for cluster usage. The code may be run on a computer with sufficient RAM to accommodate the in-memory operations. Some scripts have considerable computational requirements (>100 mb RAM, >100 hrs total continuous runtime across all species). An example slurm script (‘OBL_ex_slurm’) is housed in this repository.
 
 Alex Wiebe
 
