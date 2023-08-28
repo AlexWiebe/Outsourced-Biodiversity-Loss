@@ -1,5 +1,5 @@
 
-### OBL_fig2.R
+### fig2.R
 
 ### Alex Wiebe
 ### Princeton University
