@@ -16,7 +16,7 @@ Here, we provide information to assess and replicate our analysis.
 
 ## Overview
 
-There are four main components to this analysis. All scripts noted below can be found in the /scripts/ folder of this repository.
+There are four main components to this analysis. All scripts noted below can be found in the /scripts/ folder of this repository, and are run using R v4.3.
 
 ### 1. Data cleaning
 
