@@ -1,5 +1,5 @@
 
-## OBL_classifyForestMammals.R
+## classifyForestMammals.R
 
 ## Alex Wiebe
 ## 7/28/22
