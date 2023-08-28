@@ -1,5 +1,5 @@
 
-### OBL_makeHansenBinary.R
+### makeHansenBinary.R
 
 ### Alex Wiebe
 ### Princeton University
