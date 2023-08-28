@@ -1,5 +1,5 @@
 
-### OBL_calcRangeCentroids.R
+### calcRangeCentroids.R
 
 ### Alex Wiebe
 ### Princeton University
