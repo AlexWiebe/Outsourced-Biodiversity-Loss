@@ -1,5 +1,5 @@
 
-### fig4.R
+### OBL_fig4.R
 
 ### Alex Wiebe
 ### Princeton University
@@ -51,6 +51,14 @@ mammal = lapply(dir_mammal, read.csv, header = T)
 dir_reptile = list.files (path = paste0(getwd(), "/IDBL_outputs/species_data/Reptile"),
                        pattern = "*", full.names = T)
 reptile = lapply(dir_reptile, read.csv, header = T)
+
+# Remove extinct species
+ex = read.csv("IUCN_extinctspecies.csv", header = T)
+for(i in 1:length(bird)){
+  bird[[i]] = bird[[i]][!(bird[[i]]$id_no %in% ex$taxonid),]
+  mammal[[i]] = mammal[[i]][!(mammal[[i]]$id_no %in% ex$taxonid),]
+  reptile[[i]] = reptile[[i]][!(reptile[[i]]$id_no %in% ex$taxonid),]
+}
 
 ### Code to calculate country centroids the first time
 # wmap = getMap(resolution = "high")
@@ -139,11 +147,11 @@ outliers$pred = predict(m2, outliers)
 outliers = outliers[outliers$drivenlog > outliers$pred,]
 plot(full$dist, full$drivenprop, pch = 19, cex=0.01)
 points(outliers$dist, outliers$drivenprop, pch = 19, cex = 0.01, col = "red")
-length(outliers$dist) #2071 species-country pairs
+length(outliers$dist) #2047 species-country pairs
 mad.spp = outliers[outliers$centroid_lon < 55 & outliers$centroid_lon > 42 &
                      outliers$centroid_lat < -11.5,]
 mad.spp = mad.spp[complete.cases(mad.spp),]
-length(mad.spp$dist) # 944 species-country pairs
+length(mad.spp$dist) # 941 species-country pairs
 
 # To save:
 {
@@ -185,7 +193,8 @@ scale_fill_gradientn(colors = c('#000040', '#02d1fa',  '#b81a1f', '#fa5902',
 ### Exception statistics
 not.mad = outliers[!outliers$id_no %in% mad.spp$id_no,]
 sum(mad.spp[mad.spp$driver.country == "United States of America",]$drivenprop,
-    na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #71.1%
+    na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #71.0%
+length(mad.spp[mad.spp$driver.country == "United States of America",]$drivenprop) #378 spp.
 sum(mad.spp[mad.spp$driver.country == "Mexico",]$drivenprop,
     na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #2.8%
 sum(mad.spp[mad.spp$driver.country == "Canada",]$drivenprop,
@@ -196,23 +205,23 @@ sum(mad.spp[mad.spp$driver.country == "Germany",]$drivenprop,
     na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #3.9%
 sum(mad.spp[mad.spp$driver.country == "France",]$drivenprop,
     na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #9.8%
-sum(mad.spp[mad.spp$driver.country != "United States of America" &
-              mad.spp$driver.country != "France" &
-              mad.spp$driver.country != "Canada" &
-              mad.spp$driver.country != "Japan",]$drivenprop,
-    na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #
+# sum(mad.spp[mad.spp$driver.country != "United States of America" &
+#               mad.spp$driver.country != "France" &
+#               mad.spp$driver.country != "Canada" &
+#               mad.spp$driver.country != "Japan",]$drivenprop,
+#     na.rm =T) / sum(mad.spp$drivenprop, na.rm = T) #
 atl.spp = outliers[outliers$centroid_lon < -30 & outliers$centroid_lon > -60 &
                      outliers$centroid_lat < 0 & outliers$centroid_lat > -32.5,] # Atlantic forest spp.
 atl.spp = atl.spp[complete.cases(atl.spp),]
-length(atl.spp$id_no)/length(not.mad$id_no) #50.0%
+length(atl.spp$id_no)/length(not.mad$id_no) #50.6%
 eaf.spp = outliers[outliers$centroid_lon < 42 & outliers$centroid_lon > 30 &
-                     outliers$centroid_lat > -12,] # Atlantic forest spp.
+                     outliers$centroid_lat > -12,] # East African spp.
 eaf.spp = eaf.spp[complete.cases(eaf.spp),]
-length(eaf.spp$id_no)/length(not.mad$id_no) #9.8%
+length(eaf.spp$id_no)/length(not.mad$id_no) #10.0%
 idn.spp = outliers[outliers$centroid_lon < 180 & outliers$centroid_lon > 130 &
                      outliers$centroid_lat > -12,] # Insular southeast asia spp.
 idn.spp = idn.spp[complete.cases(idn.spp),]
-length(idn.spp$id_no)/length(not.mad$id_no) #6.1%
+length(idn.spp$id_no)/length(not.mad$id_no) #6.2%
 
 
 library(tidyverse)
