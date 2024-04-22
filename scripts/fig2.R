@@ -1,9 +1,9 @@
 
-### fig2.R
+### OBL_fig2.R
 
 ### Alex Wiebe
 ### Princeton University
-### 2/2/23
+### 4/22/24
 
 ### DESCRIPTION:
 ### Creates Figure 2 (bar plots of international and domestic biodiversity loss
@@ -76,6 +76,13 @@ full.country.names = c("Argentina", "Australia", "Brazil", "Canada", "China", "G
     # Remove all species without coverage
     r = r[r$aoh2000 > 0,]; b = b[b$aoh2000 > 0,]; m = m[m$aoh2000 > 0,]
     
+    # Remove extinct species
+    ex = read.csv("IUCN_extinctspecies.csv", header = T)
+    r = r[!(r$id_no %in% ex$taxonid),]
+    b = b[!(b$id_no %in% ex$taxonid),]
+    m = m[!(m$id_no %in% ex$taxonid),]
+    
+    
     r$rangeeq = r$drivenloss / r$aoh2000
     b$rangeeq = b$drivenloss / b$aoh2000
     m$rangeeq = m$drivenloss / m$aoh2000
@@ -110,6 +117,12 @@ full.country.names = c("Argentina", "Australia", "Brazil", "Canada", "China", "G
     r.dom = r.dom[r.dom$aoh2000 > 0,]
     b.dom = b.dom[b.dom$aoh2000 > 0,]
     m.dom = m.dom[m.dom$aoh2000 > 0,]
+    
+    # Remove extinct species
+    ex = read.csv("IUCN_extinctspecies.csv", header = T)
+    r.dom = r.dom[!(r.dom$id_no %in% ex$taxonid),]
+    b.dom = b.dom[!(b.dom$id_no %in% ex$taxonid),]
+    m.dom = m.dom[!(m.dom$id_no %in% ex$taxonid),]
     
     r.dom$rangeeq = r.dom$drivenloss / r.dom$aoh2000
     b.dom$rangeeq = b.dom$drivenloss / b.dom$aoh2000
