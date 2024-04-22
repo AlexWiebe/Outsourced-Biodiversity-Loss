@@ -1,5 +1,5 @@
 
-### additional_analysis.R
+### OBL_additional_analysis.R
 
 ### Alex Wiebe
 ### Princeton University
@@ -56,6 +56,12 @@ full.country.names = c("Argentina", "Australia", "Brazil", "Canada", "China", "G
     # Remove all species without coverage
     r = r[r$aoh2000 > 0,]; b = b[b$aoh2000 > 0,]; m = m[m$aoh2000 > 0,]
     
+    # Remove extinct species
+    ex = read.csv("IUCN_extinctspecies.csv", header = T)
+    r = r[!(r$id_no %in% ex$taxonid),]
+    b = b[!(b$id_no %in% ex$taxonid),]
+    m = m[!(m$id_no %in% ex$taxonid),]
+    
     r.nonzero = length(r[r$drivenloss > 1,]$id_no)
     b.nonzero = length(b[b$drivenloss > 1,]$id_no)
     m.nonzero = length(m[m$drivenloss > 1,]$id_no)
@@ -95,6 +101,16 @@ median(global$nonzero)/sum(length(rept[[1]]$id_no), length(bird[[1]]$id_no),
     b.dom = bird.dom[[c]]
     m.dom = mammal.dom[[c]]
     
+    # Remove extinct species
+    ex = read.csv("IUCN_extinctspecies.csv", header = T)
+    r = r[!(r$id_no %in% ex$taxonid),]
+    b = b[!(b$id_no %in% ex$taxonid),]
+    m = m[!(m$id_no %in% ex$taxonid),]
+    ex = read.csv("IUCN_extinctspecies.csv", header = T)
+    r.dom = r.dom[!(r.dom$id_no %in% ex$taxonid),]
+    b.dom = b.dom[!(b.dom$id_no %in% ex$taxonid),]
+    m.dom = m.dom[!(m.dom$id_no %in% ex$taxonid),]
+    
     r$drivenloss = r$drivenloss - r.dom$drivenloss
     b$drivenloss = b$drivenloss - b.dom$drivenloss
     m$drivenloss = m$drivenloss - m.dom$drivenloss
@@ -120,7 +136,7 @@ View(global) # all values under 'drivenloss' only include international losses
 
 # global = global[global$aoh2000 > 0,]
 global$drivenprop = global$drivenloss / global$rangeloss
-median(global$drivenprop, na.rm = T) # 13.2%
+median(global$drivenprop, na.rm = T) # 13.3%
 
 
 
@@ -137,7 +153,7 @@ cr = rbind(bm, r)
 
 global.cr = global[global$id_no %in% cr$id_no,]
 global.cr$losses = global.cr$drivenloss / global.cr$aoh2000
-sum(global.cr$drivenloss, na.rm = T) / sum(global.cr$rangeloss, na.rm = T) # 16%
+sum(global.cr$drivenloss, na.rm = T) / sum(global.cr$rangeloss, na.rm = T) # 16.2%
 # of all habitat loss to these species is attributable to the driver countries
 median(global.cr$drivenprop, na.rm = T) # 14.0% average international contribution
 # to these species' ranges
