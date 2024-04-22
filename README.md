@@ -47,7 +47,9 @@ functions.R
 We perform additional analyses on these outputs, for example to calculate summary statistics.
 
 additional_analysis.R<br/>
-criticallyendangered.R
+criticallyendangered.R<br/>
+OBL_sensitivity_analysis_driver.R<br/>
+OBL_sensitivity_aohcalculations.R
 
 ### 4. Figure creation
 
@@ -55,7 +57,10 @@ fig2.R<br/>
 fig3.R<br/>
 fig3_part2.R<br/>
 fig4.R<br/>
-supp_fig_ratio.R<br/>
+supp_fig1.R<br/>
+supp_fig2_totallosses.R<br/>
+supp_fig4.R<br/>
+supp_fig_logratio.R<br/>
 
 ## Computational requirements
 
